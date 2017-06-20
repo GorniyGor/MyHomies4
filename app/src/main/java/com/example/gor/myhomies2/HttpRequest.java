@@ -43,7 +43,6 @@ class HttpRequest {
                     int responseCode = connection.getResponseCode();
 
                     if (responseCode == HttpURLConnection.HTTP_OK ) {
-                        Map<String, List<String>> headers = connection.getHeaderFields();
                         InputStream is = new BufferedInputStream(connection.getInputStream());
                         if(jsonORimage.compareTo("JSON") == 0) {
                             mContent = StringUtils.readInputStream(is);

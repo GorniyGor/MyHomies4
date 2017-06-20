@@ -5,9 +5,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Binder;
 import android.os.IBinder;
-import android.support.annotation.IntDef;
 
-import com.example.gor.myhomies2.ImageCache;
 import com.example.gor.myhomies2.ImageLoader;
 
 public class LoadService extends Service {

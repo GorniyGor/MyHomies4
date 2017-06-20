@@ -27,6 +27,7 @@ class RecyclerAdapter extends RecyclerView.Adapter<SimpleViewHolder> {
     private NewImageCache imageCache;
 
     //For Service---------------------
+    //-------!!!!!!!!!!!!------С сервисом лучше работать из Activity------
     private LoadService service;
     private ServiceConnection mServiceConnection = new ServiceConnection() {
         @Override
@@ -52,7 +53,7 @@ class RecyclerAdapter extends RecyclerView.Adapter<SimpleViewHolder> {
     public RecyclerAdapter(LayoutInflater layoutInflater) {
         localInflater = new WeakReference<LayoutInflater>(layoutInflater);
         imageCache = NewImageCache.getInstance();
-        imageCache.instanceLruCache();
+        //imageCache.instanceLruCache();
         imageCache.instanceContext(localInflater.get().getContext());
 
         Intent i = new Intent(localInflater.get().getContext(), LoadService.class);
@@ -95,7 +96,7 @@ class RecyclerAdapter extends RecyclerView.Adapter<SimpleViewHolder> {
         return DownloadJSONAsync.countOfImages;
     }
 
-    @Override
+    @Override // --------!!!!!!!!------Почему он не вызывается?------------
     public void onDetachedFromRecyclerView(RecyclerView recyclerView) {
         service.unbindService(mServiceConnection);//Сервис  - это контекст, поэтому можем вызвать данный метод
     }

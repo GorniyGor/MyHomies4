@@ -33,7 +33,7 @@ public class DownloadJSONAsync extends AsyncTask<String, Object, JSONArray> {
                 Log.d(TAG, "There is gotten JSONTokener");
                 try {
                     JSONArray jsonArray = (JSONArray) jtk.nextValue();
-                    countOfImages = jsonArray.length();
+                    //countOfImages = jsonArray.length();//Это в onPostExecute---!!!!!!!!!!----
                     Log.d(TAG, "lenghtPUT = " + countOfImages);
                     return jsonArray;
                 } catch (JSONException ex) {
@@ -52,6 +52,7 @@ public class DownloadJSONAsync extends AsyncTask<String, Object, JSONArray> {
     @Override
     protected void onPostExecute(JSONArray linksArray) {
 
+        countOfImages = linksArray.length();
         NewImageCache imageCache = NewImageCache.getInstance();
         Log.d(TAG, "onPostExecute");
 

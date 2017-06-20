@@ -23,22 +23,21 @@ public class NewImageCache {
     private static volatile NewImageCache sSelf;
     private ArrayList<String> mUrls = new ArrayList<String>();
     /*private SparseArray<Bitmap> mImages = new SparseArray<Bitmap>();*/
-    private LruCache<String, Bitmap> mCache;
+    //private LruCache<String, Bitmap> mCache;
 
     //LRUCache's variables-----------------------
     final int maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1024);
     final int cacheSize = maxMemory / 8;
     private Context context;
 
-    //Почему то выдаёт ошибку, если не в отдельном методе.------!!!!!!!!!---------
-    public void instanceLruCache() {
-        mCache = new LruCache<String, Bitmap>(cacheSize) {
+    //Почему то выдаёт ошибку, если не в отдельном методе.------!!!!!!!!!--------
+
+    private LruCache<String, Bitmap> mCache = new LruCache<String, Bitmap>(cacheSize){
             @Override
             protected int sizeOf(String key, Bitmap bitmap) {
                 return bitmap.getByteCount() / 1024;
             }
         };
-    }
     //Нужно для работы с файловой системой
     public void instanceContext(Context context) {
         this.context = context;
@@ -87,20 +86,20 @@ public class NewImageCache {
     //Main methods
     private Bitmap getImageFromStorage(int position) {
         String state = Environment.getExternalStorageState();
-        if(state == Environment.MEDIA_MOUNTED) return getImageFromExternalStorage(position);
+        if(state.equals(Environment.MEDIA_MOUNTED)) return getImageFromExternalStorage(position);
         else return getImageFromInternalStorage(position);
     }
 
     private void setImageIntoStorage(Bitmap image, Integer position){
         String state = Environment.getExternalStorageState();
-        if(state == Environment.MEDIA_MOUNTED) setImageIntoExternalStorage(image, position);
+        if(state.equals(Environment.MEDIA_MOUNTED)) setImageIntoExternalStorage(image, position);
         else setImageIntoInternalStorage(image, position);
     }
 
     //Internal storage---------------------------------
     private Bitmap getImageFromInternalStorage (Integer position){
         String filename = position.toString();
-        File file = new File(context.getFilesDir(), filename);
+        File file = new File(context.getCacheDir(), filename);
         if(file.exists()){
             try {
                 InputStream is = new FileInputStream(file);
@@ -117,7 +116,7 @@ public class NewImageCache {
     public void setImageIntoInternalStorage (Bitmap image, Integer position){
         String filename = position.toString();
         FileOutputStream outputStream;
-        File file = new File(context.getFilesDir(), filename);
+        File file = new File(context.getCacheDir(), filename);
         try {
             outputStream = new FileOutputStream(file);
             image.compress(Bitmap.CompressFormat.PNG, 100, outputStream);
