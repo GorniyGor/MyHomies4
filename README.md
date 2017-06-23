@@ -2,11 +2,12 @@
 <b>TASK</b>
 <p>
 Для его выполнения вам надо написать 6 тестов к д/з №3. 
-<ol>Обычный JUnit тест, запускаемый при компиляции на JVM</ol>
-<ol>Android Instrumentation Test с использованием Context</ol>
-<ol>Android Instrumentation Test для Activity с использованием ActivityTestRule</ol>
-<ol>Android Instrumentation Test для Service с использованием ServiceTestRule</ol>
-<ol>Тест UI с использованием Espresso</ol>
-<ol>Test UI с использованием UIAutomator</ol>
-
+<ol>
+<li>Обычный JUnit тест, запускаемый при компиляции на JVM</li>
+<li>Android Instrumentation Test с использованием Context</li>
+<li>Android Instrumentation Test для Activity с использованием ActivityTestRule</li>
+<li>Android Instrumentation Test для Service с использованием ServiceTestRule</li>
+<li>Тест UI с использованием Espresso</li>
+<li>Test UI с использованием UIAutomator</li>
+</ol>
 Дополнительным плюсом будет использование библиотеки Mockito
