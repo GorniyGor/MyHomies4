@@ -1,4 +1,4 @@
-package com.example.gor.myhomies2.Services;
+package com.example.gor.myhomies3.Services;
 
 import android.app.Service;
 import android.content.Intent;
@@ -6,7 +6,7 @@ import android.graphics.Bitmap;
 import android.os.Binder;
 import android.os.IBinder;
 
-import com.example.gor.myhomies2.ImageLoader;
+import com.example.gor.myhomies3.ImageLoader;
 
 public class LoadService extends Service {
 

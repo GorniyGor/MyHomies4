@@ -1,10 +1,10 @@
-package com.example.gor.myhomies2;
+package com.example.gor.myhomies3;
 
 
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.example.gor.myhomies2.Services.NewImageCache;
+import com.example.gor.myhomies3.Services.NewImageCache;
 
 import org.json.JSONArray;
 import org.json.JSONException;

@@ -1,10 +1,9 @@
-package com.example.gor.myhomies2;
+package com.example.gor.myhomies3;
 
 import android.graphics.Bitmap;
-import android.media.Image;
 
 
-import com.example.gor.myhomies2.Services.NewImageCache;
+import com.example.gor.myhomies3.Services.NewImageCache;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

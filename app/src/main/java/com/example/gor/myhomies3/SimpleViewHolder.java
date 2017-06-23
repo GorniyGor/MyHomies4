@@ -1,4 +1,4 @@
-package com.example.gor.myhomies2;
+package com.example.gor.myhomies3;
 
 /**
  * Created by Gor on 24.03.2017.

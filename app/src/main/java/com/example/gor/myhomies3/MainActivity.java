@@ -1,4 +1,4 @@
-package com.example.gor.myhomies2;
+package com.example.gor.myhomies3;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,7 +7,7 @@ import android.support.v7.widget.RecyclerView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private RecyclerView mRecyclerView;
+    RecyclerView mRecyclerView;
     private RecyclerAdapter mRecyclerAdapter;
 
 

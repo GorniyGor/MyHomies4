@@ -1,4 +1,4 @@
-package com.example.gor.myhomies2;
+package com.example.gor.myhomies3;
 
 import android.content.ComponentName;
 import android.content.Intent;
@@ -9,8 +9,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-import com.example.gor.myhomies2.Services.LoadService;
-import com.example.gor.myhomies2.Services.NewImageCache;
+import com.example.gor.myhomies3.Services.LoadService;
+import com.example.gor.myhomies3.Services.NewImageCache;
 
 import java.lang.ref.WeakReference;
 
