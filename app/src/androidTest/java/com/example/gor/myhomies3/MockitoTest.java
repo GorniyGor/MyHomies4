@@ -8,7 +8,6 @@ import static org.mockito.Mockito.*;
  */
 
 public class MockitoTest {
-
     List mockedList = mock(List.class);
 
     // using mock object - it does not throw any "unexpected interaction" exception
